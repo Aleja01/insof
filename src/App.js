@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactDOM from "react-dom/client";
 
-function App() {
+import { BrowserRouter, Route, Router, Routes, Navigate, useNavigate  } from 'react-router-dom';
+import GlobalStyle from './styles/globalStyles';
+
+import ProductForm from './components/ProductForm';
+import Sales from './components/Sales';
+import User from './components/User';
+import HomePage from './components/HomePage';
+import InventoryTable from './components/Inventory';
+import  UserDropdown from './components/drop';
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalStyle />
+      <Routes>
+        <Route exact path="/" />    
+        <Route index element={<HomePage />} />   
+        <Route path="/inventory" element={<InventoryTable />} />
+        <Route path="/add-product" element={<ProductForm />} />
+        <Route path="/sales" element={<Sales />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/drop" element={<UserDropdown />} />
+      </Routes>
+    </BrowserRouter>
+    
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

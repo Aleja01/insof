@@ -1,0 +1,92 @@
+/* Importar fuentes externas */
+
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap');
+
+/* Variables de colores */
+:root {
+  --color-primary: #000000;
+  --color-secondary: #343410;
+  --color-tertiary: #6b882b;
+  --color-accent-1: #aa4c04;
+  --color-accent-2: #e80b02;
+  --color-accent-3: #636363;
+}
+
+/* Estilos globales */
+
+body {
+  font-family: 'Arima Madurai', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Estilos específicos de la aplicación */
+
+/* Estilos del formulario de inicio de sesión */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-primary);
+}
+
+.login-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 16px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--color-secondary);
+  border-radius: 12px;
+  padding: 24px;
+  width: 300px;
+}
+
+.login-title {
+  font-size: 24px;
+  margin-bottom: 32px;
+  color: var(--color-primary);
+}
+
+.login-label {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.login-input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f4f4f4;
+  color: var(--color-primary);
+  ::placeholder {
+    color: #636363;
+  }
+}
+
+.login-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button {
+  background-color: var(--color-tertiary);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
